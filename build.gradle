@@ -1,0 +1,45 @@
+plugins {
+    id("java")
+    id("net.serenity-bdd.serenity-gradle-plugin") version "3.9.7"
+}
+
+group = 'co.com.sofka.certification.challenge'
+description = 'Automatizacion para prueba tecnica'
+version = '1.0'
+
+compileJava {
+    options.encoding('UTF-8')
+}
+compileTestJava {
+    options.encoding('UTF-8')
+}
+
+tasks.named('wrapper') {
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    serenityVersion = "3.9.7"
+}
+
+dependencies {
+    implementation group: 'com.mashape.unirest', name: 'unirest-java', version: '1.4.9'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.1'
+
+    implementation "net.serenity-bdd:serenity-core:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-junit:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-rest-assured:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:$serenityVersion"
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation "net.serenity-bdd:serenity-cucumber:$serenityVersion"
+    testImplementation 'org.slf4j:slf4j-simple:2.0.7'
+
+}
+
