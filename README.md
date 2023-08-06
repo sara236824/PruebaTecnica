@@ -13,12 +13,12 @@ Archivo de pruebas: weather_information.feature
 Java 1.8, update 11 o mayor y JDK (variables de entorno configuradas). Eclipse IDE o IntelliJ IDEA (automatizacion relaizada en versión 2023 de IOntellij). Gradle versión 5.5.1 o mayor (Variables de entono configuradas). Gherkin Plugin (versión actualizada).
 
 ### Instalación ⚙️
-Para clonar este repositorio localmente, se debe ejecutar el siguiente comando: git clone https://github.com/sara236824/PruebaTecnica.git 
-Importar el proyecto desde Eclipse o IntelliJ IDE bajo la estructura de un proyecto Gradle existente. 
-Configurar la librería del sistema JRE con JavaSE-1.8. Configurar la codificación a UTF-8 al proyecto una vez importado. 
-Compilar el proyecto y generar Wrapper 🔧 
-Para construir el proyecto se debe ejecutar el comando: gradle clean build -x test.
-Comando de ejecución ▶️ El proyecto se puede ejecutar desde la consola, estando en la carpeta del proyecto con el siguiente comando: gradle clean test --tests=* aggregate --info. 
+- Para clonar este repositorio localmente, se debe ejecutar el siguiente comando: git clone https://github.com/sara236824/PruebaTecnica.git 
+- Importar el proyecto desde Eclipse o IntelliJ IDE bajo la estructura de un proyecto Gradle existente. 
+- Configurar la librería del sistema JRE con JavaSE-1.8. Configurar la codificación a UTF-8 al proyecto una vez importado. 
+- Compilar el proyecto y generar Wrapper 🔧 
+- Para construir el proyecto se debe ejecutar el comando: gradle clean build -x test.
+- Comando de ejecución ▶️ El proyecto se puede ejecutar desde la consola, estando en la carpeta del proyecto con el siguiente comando: gradle clean test --tests=* aggregate --info. 
 
 ### Reportes 🎨
 El informe Serenity se generará en la carpeta /target/site/serenity/ situada en la carpeta raíz del proyecto.
