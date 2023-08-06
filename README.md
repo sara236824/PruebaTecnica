@@ -1,12 +1,11 @@
 # Prueba Tecnica Sofka 
 
-## Current weather data -- OpenWeather
-
 Introducción
-Automatización para la api publicada de consulta de clima de openWeather, realizada por Sara Victoria Padilla
+Automatización para la api publicada de Current weather data -- OpenWeather, realizada por Sara Victoria Padilla
 Pruebas al consumo Get, para la consulta del clima actual discriminado por:
-- Ciudad
-- Latitud y longitud
+Ciudad
+Latitud y longitud
+
 La automatizacion esta desarrollada bajo el patron de diseño Scremplay con Bdd.
 Archivo de pruebas: weather_information.feature
 
