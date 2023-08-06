@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Weather Information","Consult weather information by name of city","SUCCESS","2023-08-05T19:52:55.317-05:00[America/Bogota]","0.0","1.79"
+"Weather Information","Successful consult weather information by name of city","SUCCESS","2023-08-05T21:16:34.639-05:00[America/Bogota]","0.0","2.14"

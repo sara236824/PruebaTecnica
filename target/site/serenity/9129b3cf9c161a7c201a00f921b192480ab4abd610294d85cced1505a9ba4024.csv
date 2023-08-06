@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Weather Information","Consult  weather information with empty  latitude","PENDING","2023-08-05T21:08:49.517-05:00[America/Bogota]","0.0","0.11"
+"Weather Information","Consult  weather information with empty longitude","PENDING","2023-08-05T21:08:49.63-05:00[America/Bogota]","0.0","0.11"

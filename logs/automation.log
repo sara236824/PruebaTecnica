@@ -1,0 +1,14 @@
+2023-08-05T14:52:20,459 [Test worker] INFO  (MakeJsonRequets.java:23) - Consumption of a Get request
+2023-08-05T14:52:20,989 [Test worker] INFO  (MakeJsonRequets.java:58) - El servicio respondio un código 200 OK
+2023-08-05T14:52:20,990 [Test worker] INFO  (MakeJsonRequets.java:59) - [Ljava.lang.String;@b21f9f
+2023-08-05T14:52:20,990 [Test worker] INFO  (ConsultCity.java:27) - Holaa
+2023-08-05T14:52:21,018 [Test worker] INFO  (MakeJsonRequets.java:23) - Consumption of a Get request
+2023-08-05T14:52:21,438 [Test worker] INFO  (MakeJsonRequets.java:58) - El servicio respondio un código 200 OK
+2023-08-05T14:52:21,438 [Test worker] INFO  (MakeJsonRequets.java:59) - [Ljava.lang.String;@91530d
+2023-08-05T14:52:21,438 [Test worker] INFO  (ConsultWeatherByCity.java:29) - Holaa
+2023-08-05T14:54:07,060 [Test worker] INFO  (MakeJsonRequets.java:23) - Consumption of a Get request
+2023-08-05T14:54:25,564 [Test worker] INFO  (MakeJsonRequets.java:58) - El servicio respondio un código 200 OK
+2023-08-05T14:54:36,283 [Test worker] INFO  (MakeJsonRequets.java:59) - [Ljava.lang.String;@1de8898
+2023-08-05T15:01:51,289 [Test worker] INFO  (MakeJsonRequets.java:23) - Consumption of a Get request
+2023-08-05T15:02:00,050 [Test worker] INFO  (MakeJsonRequets.java:58) - El servicio respondio un código 200 OK
+2023-08-05T15:02:01,220 [Test worker] INFO  (MakeJsonRequets.java:59) - java.io.ByteArrayInputStream@1ac80a8

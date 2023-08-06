@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" name="RoutingTest">
+
+    <!-- Logging Properties -->
+    <Properties>
+        <Property name="LOG_PATTERN">%d{dd-MM-yyyy HH:mm:ss} [Clase: %c{1}.java Línea: %line] - %msg%n%throwable
+        </Property>
+        <Property name="APP_LOG_ROOT">./logs/</Property>
+    </Properties>
+
+    <Appenders>
+
+        <Routing name="Routing">
+            <Routes pattern="$${ctx:ROUTINGKEY}">
+
+                <Route key="$${ctx:ROUTINGKEY}">
+                    <RollingFile name="Rolling-default" fileName="${APP_LOG_ROOT}/app.log"
+                                 filePattern="${APP_LOG_ROOT}/${date:yyyy-MM}/app-%d{yyyy-MM-dd}-%i.log">
+                        <PatternLayout>
+                            <pattern>${LOG_PATTERN}</pattern>
+                        </PatternLayout>
+                        <Policies>
+                            <TimeBasedTriggeringPolicy interval="6" modulate="true"/>
+                            <SizeBasedTriggeringPolicy size="10 MB"/>
+                        </Policies>
+                    </RollingFile>
+                </Route>
+
+                <!-- This route is chosen if ThreadContext has a value for ROUTINGKEY
+                     (other than the value 'special' which had its own route above).
+                     The value dynamically determines the name of the log file. -->
+                <Route>
+                    <RollingFile name="Rolling-${ctx:ROUTINGKEY}" fileName="${APP_LOG_ROOT}/${ctx:ROUTINGKEY}.log"
+                                 filePattern="${APP_LOG_ROOT}/${date:yyyy-MM}/${ctx:ROUTINGKEY}-%d{yyyy-MM-dd}-%i.log">
+                        <PatternLayout>
+                            <pattern>%d{ISO8601} | %msg%n%throwable</pattern>
+                        </PatternLayout>
+                        <Policies>
+                            <TimeBasedTriggeringPolicy interval="6" modulate="true"/>
+                            <SizeBasedTriggeringPolicy size="10 MB"/>
+                        </Policies>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+
+        <RollingFile name="errorLog"
+                     fileName="${APP_LOG_ROOT}/app-error.log"
+                     filePattern="${APP_LOG_ROOT}/${date:yyyy-MM}/app-error-%d{dd-MM-yyyy}-%i.log">
+            <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR"
+                              onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <pattern>${LOG_PATTERN}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="6" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5level] %d{dd-MM-yyyy HH:mm:ss} [Clase: %c{1}.java  Línea: %line] - %msg%n%throwable"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Routing"/>
+            <AppenderRef ref="errorLog"/>
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>
